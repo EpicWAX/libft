@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:21:29 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 08:21:36 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/11 15:54:44 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/11 16:03:42 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_strnew(size_t size)
 {
-	size_t i;
+	size_t	i;
+	char	*new;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	new = (char *)malloc(sizeof(char) * size + 1);
+	while (i < size)
+	{
+		new[i] = '\0';
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	new[i] = '\0';
+	return (new);
 }

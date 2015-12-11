@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:21:29 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 08:21:36 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/11 10:10:34 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	int i;
+	int k;
+	int s;
 
+	if (!*s2)
+		return (char *)(s1);
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	while ((s1 && s1[++i]) && n > 0)
+	{
+		if (ft_strlen(s2))
+			return (NULL);
+		k = 0;
+		s = i;
+		while (s1[s] == s2[k] && s2[k] && s1[s])
+		{
+			k++;
+			s++;
+		}
+		if (s2[k] == '\0')
+			return ((char *)s1 + i);
+		n--;
+	}
+	return (NULL);
 }

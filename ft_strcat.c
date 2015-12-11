@@ -1,22 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/11 08:21:11 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/11 08:25:45 by qhusler          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	ft_strcpy(&dest[ft_strlen(dest)], src);
 	return (dest);
 }
-
-/*						MY CODE
-**	unsigned int i;
-**	unsigned int len;
-**
-**	i = 0;
-**	len = ft_strlen(src);
-**	while (src && src[i])
-**	{
-**		dest[len + i] = src[i];
-**		i++;
-**	}
-**	dest[len + i] = '\0';
-**	return (dest);
-*/
