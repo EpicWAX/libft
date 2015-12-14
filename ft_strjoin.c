@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/13 04:07:01 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/13 07:03:05 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int k;
-	int s;
+	char *new_s;
 
-	if (!*s2)
-		return (char *)(s1);
-	i = 0;
-	while (s1[i] && n > 0)
-	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
-		{
-			k++;
-			s++;
-		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
-		i++;
-	}
-	return (NULL);
+	new_s = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!new_s)
+		return (NULL);
+	new_s = ft_strdup(s1);
+	new_s = ft_strcat(new_s, s2);
+	new_s[ft_strlen(new_s)] = '\0';
+	return (new_s);
 }

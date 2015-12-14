@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/11 21:46:29 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/12 16:29:24 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+void	ft_striter(char *s, void (*f)(char *))
 {
 	int i;
-	int k;
-	int s;
 
-	if (!*s2)
-		return (char *)(s1);
-	i = 0;
-	while (s1[i] && n > 0)
-	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
-		{
-			k++;
-			s++;
-		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
-		i++;
-	}
-	return (NULL);
+	if (!s || !f)
+		return ;
+	i = -1;
+	while (s && s[++i])
+		f(&s[i]);
 }

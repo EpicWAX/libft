@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/12 17:49:40 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/12 22:21:38 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
-	int k;
-	int s;
-
-	if (!*s2)
-		return (char *)(s1);
-	i = 0;
-	while (s1[i] && n > 0)
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	else
 	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
+		while (*s1 != '\0' || *s2 != '\0')
 		{
-			k++;
-			s++;
+			if (*s1 != *s2)
+				return (0);
+			s1++;
+			s2++;
 		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
-		i++;
+		return (1);
 	}
-	return (NULL);
 }

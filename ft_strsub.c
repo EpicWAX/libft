@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/12 23:07:16 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/13 16:22:26 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int i;
-	int k;
-	int s;
+	char	*new_s;
 
-	if (!*s2)
-		return (char *)(s1);
-	i = 0;
-	while (s1[i] && n > 0)
-	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
-		{
-			k++;
-			s++;
-		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
-		i++;
-	}
-	return (NULL);
+	new_s = (char *)malloc(sizeof(char) * len + 1);
+	if (!new_s)
+		return (NULL);
+	while (start--)
+		s++;
+	ft_strncpy(new_s, s, len);
+	new_s[len] = '\0';
+	return (new_s);
 }

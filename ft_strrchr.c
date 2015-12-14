@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 10:30:05 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 14:01:42 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/13 07:08:42 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-
-/*char	*ft_strrchr(const char *s, int c)
-{
-	ft_putchar('\n');
-	ft_putnbr(ft_strlen(s));
-	ft_putchar('\n');
-	while (*s)
-		s++;
-	ft_putchar(*s);
-	ft_putchar('\n');
-	while (c - *s != 0)
-	{
-		if (c == *s)
-			return ((char *)s);
-		ft_putchar('\n');
-		ft_putchar('o');
-		s--;
-	}
-	return (NULL);
-}*/

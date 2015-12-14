@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/13 22:48:15 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/14 01:23:34 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int i;
-	int k;
-	int s;
-
-	if (!*s2)
-		return (char *)(s1);
+	unsigned int	i;
+	unsigned char	*a;
+	unsigned char	*b;
+	
 	i = 0;
-	while (s1[i] && n > 0)
+	a = (unsigned char *)dst;
+	b = (unsigned char *)src;
+	while (i < n)
 	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
-		{
-			k++;
-			s++;
-		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
+		a[i] = b[i];
 		i++;
 	}
-	return (NULL);
+	return (dst);
 }

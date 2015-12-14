@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:17:08 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 19:10:20 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/12 14:36:15 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/13 07:09:17 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	int k;
-	int s;
+	int		i;
+	char	*new_s;
 
-	if (!*s2)
-		return (char *)(s1);
-	i = 0;
-	while (s1[i] && n > 0)
-	{
-		if (n < ft_strlen(s2))
-			return (NULL);
-		k = 0;
-		s = i;
-		while (s1[s] == s2[k] && s2[k] && s1[s])
-		{
-			k++;
-			s++;
-		}
-		if (s2[k] == '\0')
-			return ((char *)s1 + i);
-		n--;
-		i++;
-	}
-	return (NULL);
+	new_s = ft_strdup(s);
+	if (!s || !f || !new_s)
+		return (NULL);
+	i = -1;
+	while (new_s && new_s[++i])
+		new_s[i] = f(new_s[i]);
+	new_s[i] = '\0';
+	return (new_s);
 }

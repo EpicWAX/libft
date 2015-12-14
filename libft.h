@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/14 06:06:10 by qhusler          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -6,10 +18,10 @@
 
 //L1
 
-//memset
-//bzero
-//memcpy
-//memccpy
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *src, const void *dst, int c, size_t n);
 //memmove
 //memchr
 //memcmp
@@ -26,6 +38,7 @@ char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -36,12 +49,22 @@ int		ft_tolower(int c);
 
 //L2
 
-int		ft_atoi(const char *str);
 void	*memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
-/* print function */
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void(*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(const char *s);
+char	**ft_strsplit(const char *s, char c);
+//ft_itoa
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
@@ -51,38 +74,47 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
+//L3
+
+//ft_lstnew
+//ft_lstdelone
+//ft_lstdel
+//ft_lstadd
+//ft_lstiter
+//ft_lstmap
+
 #endif
 
 /*			--LISTE 1--
 
-	memset
-	bzero
+XM4	memset
+XM4	bzero
 	memcpy
 	memccpy
 	memmove
 	memchr
 	memcmp
-X	strlen
-X	strdup
-X	strcpy
-X	strncpy
-X	strcat
-X	strncat
-X	strlcat
-X	strchr
-X	strrchr
-X	strstr
-	strnstr
-X	strcmp
-X	strncmp
-X	atoi
-X	isalpha	
-X	isdigit	
-X	isalnum	
-X	isascii	
-X	isprint		
-X	toupper		
-X	tolower	
+XM4	strlen
+XM4	strdup
+XM4	strcpy
+XM4	strncpy
+XM4	strcat
+XM4	strncat
+XM4	strlcat
+XM4	strchr
+XM4	strrchr
+XM4	strstr
+XM4	strnstr
+XM4	strcmp
+XM4	strncmp
+XM4	atoi
+XM4	isalpha	
+XM4	isdigit	
+XM4	isalnum	
+XM4	isascii	
+XM4	isprint		
+XM4	toupper		
+XM4	tolower	
 
 */
 
@@ -90,27 +122,27 @@ X	tolower
 
 ~	ft_memalloc
 ~	ft_memdel
-X	ft_strnew
+XM	ft_strnew
 ~	ft_strdel
-	ft_strclr
-	ft_striter
-	ft_striteri
-	ft_strmap
-	ft_strmapi
-	ft_strequ
-	ft_strnequ
-	ft_strsub
-	ft_strjoin
+XM4	ft_strclr
+XM4	ft_striter
+XM4	ft_striteri
+XM	ft_strmap
+XM4	ft_strmapi
+XM4	ft_strequ
+XM4	ft_strnequ
+XM	ft_strsub
+XM4	ft_strjoin
 	ft_strtrim
 	ft_strsplit
 	ft_itoa
-X	ft_putchar
-X	ft_putstr
-X	ft_putendl
-X	ft_putnbr
-X	ft_putchar_fd
-X	ft_putstr_fd
-X	ft_putendl_fd
-X	ft_putnbr_fd
+XM4	ft_putchar
+XM4	ft_putstr
+XM4	ft_putendl
+XM4	ft_putnbr
+XM4	ft_putchar_fd
+XM4	ft_putstr_fd
+XM4	ft_putendl_fd
+XM4	ft_putnbr_fd
 
 */
