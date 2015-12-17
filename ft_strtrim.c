@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/13 22:09:27 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 14:20:19 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
+/*   Updated: 2015/12/16 22:44:29 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	unsigned char *c;
+	int		start;
+	int		k;
+	int		len;
 
-	c = (unsigned char *)s;
-	while (n)
-	{
-		*c = 0;
-		c++;
-		n--;
-	}
+	start = 0;
+	while (s[start] == ' ' || s[start] == '\t' || s[start] == '\n')
+		++start;
+	k = -1;
+	while (s && s[++k])
+		if (s[k] != ' ' && s[k] != '\t' && s[k] != '\n')
+			len = ++k;
+	if (s && len == 0)
+		return (ft_strdup(s));
+	else
+		return (ft_strsub(s, start, (len - start)));
+	return (NULL);
 }

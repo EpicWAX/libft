@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:32:17 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 05:18:41 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/14 14:19:35 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ static char		*ft_dup_word(char const *s, char c)
 	return (word);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		nb_of_w;
 	int		i;
 
 	nb_of_w = ft_nb_of_words(s, c);
-	if (!s || !(tab =(char **)malloc(sizeof(char *) * nb_of_w + 1)))
+	if (!s || !(tab = (char **)malloc(sizeof(char *) * nb_of_w + 1)))
 		return (NULL);
 	i = -1;
 	while (*s)

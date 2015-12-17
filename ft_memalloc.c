@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:38:22 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 17:47:29 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/16 20:47:28 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 
 void	*ft_memalloc(size_t size)
 {
-	int	*mem;
+	int				i;
+	unsigned char	*c;
 
-	mem = (int *)malloc(sizeof(int) * size + 1);
-	return (NULL);
+	i = -1;
+	c = NULL;
+	c = (unsigned char *)malloc(size);
+	if (c)
+		while (size--)
+			c[++i] = 0;
+	return ((void *)c);
 }

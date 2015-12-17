@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 05:54:02 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 06:15:03 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/15 07:03:03 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		a[i] = b[i];
-		if (b[i] == (unsigned char)c)
+		if (a[i] == (unsigned char)c)
 			return ((void *)&a[i + 1]);
 		i++;
 	}
-	return (dst);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 06:06:10 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/16 20:49:46 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *src, const void *dst, int c, size_t n);
-//memmove
-//memchr
-//memcmp
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
@@ -49,7 +49,7 @@ int		ft_tolower(int c);
 
 //L2
 
-void	*memalloc(size_t size);
+void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
@@ -89,8 +89,8 @@ void	ft_putnbr_fd(int n, int fd);
 
 XM4	memset
 XM4	bzero
-	memcpy
-	memccpy
+XM4	memcpy
+XM	memccpy
 	memmove
 	memchr
 	memcmp
@@ -120,27 +120,27 @@ XM4	tolower
 
 /*			--LISTE 2--
 
-~	ft_memalloc
-~	ft_memdel
-XM	ft_strnew
-~	ft_strdel
+	ft_memalloc
+	ft_memdel
+XM4	ft_strnew
+XM4	ft_strdel
 XM4	ft_strclr
 XM4	ft_striter
 XM4	ft_striteri
-XM	ft_strmap
+XM4	ft_strmap
 XM4	ft_strmapi
 XM4	ft_strequ
 XM4	ft_strnequ
-XM	ft_strsub
+XM4	ft_strsub
 XM4	ft_strjoin
 	ft_strtrim
-	ft_strsplit
+XM4	ft_strsplit
 	ft_itoa
-XM4	ft_putchar
+XM	ft_putchar
 XM4	ft_putstr
 XM4	ft_putendl
 XM4	ft_putnbr
-XM4	ft_putchar_fd
+XM	ft_putchar_fd
 XM4	ft_putstr_fd
 XM4	ft_putendl_fd
 XM4	ft_putnbr_fd

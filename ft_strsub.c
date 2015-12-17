@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 23:07:16 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/13 16:22:26 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/15 23:41:36 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*new_s;
 
-	new_s = (char *)malloc(sizeof(char) * len + 1);
+	new_s = ft_strnew(len);
 	if (!new_s)
 		return (NULL);
 	while (start--)

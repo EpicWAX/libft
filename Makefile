@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2015/12/14 06:03:34 by qhusler          ###   ########.fr        #
+#    Updated: 2015/12/16 20:49:30 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ SRC_NAME = ft_memset.c\
 		   ft_bzero.c\
 		   ft_memcpy.c\
 		   ft_memccpy.c \
+		   ft_memmove.c \
+		   ft_memcmp.c \
+		   ft_memchr.c \
 		   ft_strlen.c \
 		   ft_strdup.c \
 	 	   ft_strcpy.c \
@@ -38,7 +41,9 @@ SRC_NAME = ft_memset.c\
 	 	   ft_isprint.c \
 		   ft_toupper.c \
 	 	   ft_tolower.c \
-	 	   ft_strnew.c \
+	 	   ft_memalloc.c \
+		   ft_memdel.c \
+		   ft_strnew.c \
 		   ft_strdel.c \
 	 	   ft_strclr.c \
 	 	   ft_striter.c \
