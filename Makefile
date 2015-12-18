@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2015/12/17 11:49:20 by qhusler          ###   ########.fr        #
+#    Updated: 2015/12/18 14:56:15 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,8 +64,7 @@ SRC_NAME = ft_memset.c\
 	 	   ft_putchar_fd.c \
 		   ft_putstr_fd.c \
 	 	   ft_putendl_fd.c \
-	 	   ft_putnbr_fd.c \
-		   ft_putnstr.c
+	 	   ft_putnbr_fd.c 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 AR = ar rc
 RLIB = ranlib
