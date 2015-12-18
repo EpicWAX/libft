@@ -6,12 +6,11 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:22:19 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/15 23:22:15 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/17 18:39:09 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -27,11 +26,3 @@ char	*ft_strdup(const char *s)
 	}
 	return (NULL);
 }
-
-/*int		main()
-{
-	const char s[] = "star : wars:";
-
-	ft_putendl(ft_strdup(s));
-	return (0);
-}*/

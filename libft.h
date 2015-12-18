@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/16 20:49:46 by qhusler          ###   ########.fr       */
+/*   Updated: 2015/12/18 14:54:34 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 
 # include <string.h>
 # include <unistd.h>
+# include <stdlib.h>
 
-//L1
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -46,9 +52,6 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-
-//L2
-
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
@@ -64,7 +67,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(const char *s);
 char	**ft_strsplit(const char *s, char c);
-//ft_itoa
+char	*ft_itoa(int n);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
@@ -73,8 +76,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-//L3
+void	ft_putnstr(char *s, int i);
 
 //ft_lstnew
 //ft_lstdelone
@@ -84,65 +86,3 @@ void	ft_putnbr_fd(int n, int fd);
 //ft_lstmap
 
 #endif
-
-/*			--LISTE 1--
-
-XM4	memset
-XM4	bzero
-XM4	memcpy
-XM	memccpy
-	memmove
-	memchr
-	memcmp
-XM4	strlen
-XM4	strdup
-XM4	strcpy
-XM4	strncpy
-XM4	strcat
-XM4	strncat
-XM4	strlcat
-XM4	strchr
-XM4	strrchr
-XM4	strstr
-XM4	strnstr
-XM4	strcmp
-XM4	strncmp
-XM4	atoi
-XM4	isalpha	
-XM4	isdigit	
-XM4	isalnum	
-XM4	isascii	
-XM4	isprint		
-XM4	toupper		
-XM4	tolower	
-
-*/
-
-/*			--LISTE 2--
-
-	ft_memalloc
-	ft_memdel
-XM4	ft_strnew
-XM4	ft_strdel
-XM4	ft_strclr
-XM4	ft_striter
-XM4	ft_striteri
-XM4	ft_strmap
-XM4	ft_strmapi
-XM4	ft_strequ
-XM4	ft_strnequ
-XM4	ft_strsub
-XM4	ft_strjoin
-	ft_strtrim
-XM4	ft_strsplit
-	ft_itoa
-XM	ft_putchar
-XM4	ft_putstr
-XM4	ft_putendl
-XM4	ft_putnbr
-XM	ft_putchar_fd
-XM4	ft_putstr_fd
-XM4	ft_putendl_fd
-XM4	ft_putnbr_fd
-
-*/
