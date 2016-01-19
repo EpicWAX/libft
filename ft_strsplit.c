@@ -6,12 +6,11 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:32:17 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 14:19:35 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/18 15:39:49 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int		ft_nb_of_words(char const *s, char c)
 {
@@ -55,19 +54,24 @@ char			**ft_strsplit(char const *s, char c)
 	int		nb_of_w;
 	int		i;
 
-	nb_of_w = ft_nb_of_words(s, c);
-	if (!s || !(tab = (char **)malloc(sizeof(char *) * nb_of_w + 1)))
+	if (!s || !c)
 		return (NULL);
-	i = -1;
-	while (*s)
+	else
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s && *s != c)
-			tab[++i] = ft_dup_word(s, c);
-		while (*s && *s != c)
-			s++;
+		i = -1;
+		nb_of_w = ft_nb_of_words(s, c);
+		if (!(tab = (char **)malloc(sizeof(char *) * nb_of_w + 1)))
+			return (NULL);
+		while (*s)
+		{
+			while (*s && *s == c)
+				s++;
+			if (*s && *s != c)
+				tab[++i] = ft_dup_word(s, c);
+			while (*s && *s != c)
+				s++;
+		}
+		tab[++i] = NULL;
 	}
-	tab[++i] = NULL;
 	return (tab);
 }

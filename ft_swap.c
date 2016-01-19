@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 10:30:05 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/15 17:00:33 by qhusler          ###   ########.fr       */
+/*   Created: 2016/01/12 10:06:47 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/18 00:24:33 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c)
+void	ft_swap(int *a, int *b)
 {
-	int i;
+	int c;
 
-	i = ft_strlen(s);
-	while (i >= 0)
-	{
-		if (c == s[i])
-			return ((char *)s + i);
-		i--;
-	}
-	return (NULL);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

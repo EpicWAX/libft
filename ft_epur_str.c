@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   epur_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:23:16 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/16 22:13:04 by qhusler          ###   ########.fr       */
+/*   Created: 2016/01/12 11:25:22 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/18 00:43:04 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+static int		check_end(char *s, int i)
 {
-	size_t i;
+	while (s && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'))
+		i++;
+	if (s[i] == '\0')
+		return (1);
+	return (0);
+}
+
+void			ft_epur_str(char *s)
+{
+	int i;
 
 	i = 0;
-	if (*src)
+	if (s[0] == '\0')
+		return (ft_putchar('\n'));
+	while (s && s[i])
 	{
-		while (i < n && (src && src[i]))
+		while (ft_iswhsep(s[i]) != 0)
+			i++;
+		while (s[i] > 32 && s[i] < 127)
 		{
-			dest[i] = src[i];
+			ft_putchar(s[i]);
 			i++;
 		}
-		while (i < n)
-		{
-			dest[i] = '\0';
-			i++;
-		}
+		if (check_end(s, i) == 1)
+			return (ft_putchar('\n'));
+		else
+			ft_putchar(' ');
 	}
-	return (dest);
 }

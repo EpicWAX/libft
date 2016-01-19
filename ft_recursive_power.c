@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 10:30:05 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/15 17:00:33 by qhusler          ###   ########.fr       */
+/*   Created: 2015/10/15 07:52:54 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/18 01:00:21 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c)
+int		ft_recursive_power(int n, int power)
 {
-	int i;
+	int result;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	if (power < 0)
+		return (0);
+	else if (power == 0)
+		return (1);
+	else
 	{
-		if (c == s[i])
-			return ((char *)s + i);
-		i--;
+		result = n * ft_recursive_power(n, power - 1);
+		return (result);
 	}
-	return (NULL);
 }
