@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_xrotn.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/20 18:00:20 by qhusler          ###   ########.fr       */
+/*   Created: 2016/01/18 00:16:50 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/21 00:46:04 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_xrotn(char *s, int n)
 {
 	int		i;
-	int		start;
-	char	*new_s;
+	char	*tmp;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s && ft_iswhsep(s[i]) == 1)
-		i++;
-	start = i;
-	if (s[start] == '\0')
-		return (ft_strdup(""));
-	i = ft_strlen(s);
-	while (s && ft_iswhsep(s[--i]) != 0)
-		;
-	if (!(new_s = ft_strnew((i - start) + 1)))
-		return (NULL);
-	new_s = ft_strsub(s, start, (i - start) + 1);
-	return (new_s);
+	i = -1;
+	tmp = ft_strdup(s);
+	while (tmp && tmp[++i])
+	{
+		if (tmp[i] > 64 && tmp[i] < 91)
+			tmp[i] = ((tmp[i] - 90 + n) % 26 + 90);
+		if (tmp[i] > 96 && tmp[i] < 123)
+			tmp[i] = ((tmp[i] - 122 + n) % 26 + 122);
+	}
+	tmp[i] = '\0';
+	return (tmp);
 }

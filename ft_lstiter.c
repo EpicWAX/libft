@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/20 18:00:20 by qhusler          ###   ########.fr       */
+/*   Created: 2016/01/17 23:40:21 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/21 00:23:13 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int		i;
-	int		start;
-	char	*new_s;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s && ft_iswhsep(s[i]) == 1)
-		i++;
-	start = i;
-	if (s[start] == '\0')
-		return (ft_strdup(""));
-	i = ft_strlen(s);
-	while (s && ft_iswhsep(s[--i]) != 0)
-		;
-	if (!(new_s = ft_strnew((i - start) + 1)))
-		return (NULL);
-	new_s = ft_strsub(s, start, (i - start) + 1);
-	return (new_s);
+	if (!lst)
+		return ;
+	f(lst);
+	if (lst->next)
+		ft_lstiter(lst->next, f);
 }

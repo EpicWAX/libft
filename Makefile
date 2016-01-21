@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2016/01/19 16:30:53 by qhusler          ###   ########.fr        #
+#    Updated: 2016/01/21 00:45:48 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_NAME = ft_memset.c \
 	 	   ft_isascii.c \
 	 	   ft_isprint.c \
 		   ft_iswhsep.c \
+		   ft_isprime.c \
 		   ft_toupper.c \
 	 	   ft_tolower.c \
 	 	   ft_memalloc.c \
@@ -59,7 +60,8 @@ SRC_NAME = ft_memset.c \
 		   ft_strtrim.c	\
 		   ft_strsplit.c \
 	 	   ft_itoa.c \
-		   ft_rotn.c \
+		   ft_xrotn.c \
+		   ft_xntor.c \
 		   ft_swap.c \
 		   ft_putchar.c \
 	 	   ft_putstr.c \
@@ -73,7 +75,10 @@ SRC_NAME = ft_memset.c \
 	 	   ft_putnbr_fd.c \
 		   ft_lstnew.c \
 		   ft_lstdelone.c \
-		   ft_lstadd.c
+		   ft_lstdel.c \
+		   ft_lstadd.c \
+		   ft_lstiter.c \
+		   ft_lstmap.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 AR = ar rc
 RLIB = ranlib

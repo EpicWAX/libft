@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/20 18:00:20 by qhusler          ###   ########.fr       */
+/*   Created: 2016/01/17 22:42:12 by qhusler           #+#    #+#             */
+/*   Updated: 2016/01/20 19:22:24 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
-	int		start;
-	char	*new_s;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s && ft_iswhsep(s[i]) == 1)
-		i++;
-	start = i;
-	if (s[start] == '\0')
-		return (ft_strdup(""));
-	i = ft_strlen(s);
-	while (s && ft_iswhsep(s[--i]) != 0)
-		;
-	if (!(new_s = ft_strnew((i - start) + 1)))
-		return (NULL);
-	new_s = ft_strsub(s, start, (i - start) + 1);
-	return (new_s);
+	while (*alst)
+	{
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = (*alst)->next;
+	}
 }
