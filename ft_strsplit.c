@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 01:32:17 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 15:39:49 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 15:25:40 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ static char		*ft_dup_word(char const *s, char c)
 	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
-	word = (char *)malloc(sizeof(char) * len + 1);
+	if (!(word = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	i = -1;
 	while (++i < len)
 		word[i] = s[i];
@@ -56,22 +57,19 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (!s || !c)
 		return (NULL);
-	else
+	nb_of_w = ft_nb_of_words(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * nb_of_w + 1)))
+		return (NULL);
+	i = -1;
+	while (*s)
 	{
-		i = -1;
-		nb_of_w = ft_nb_of_words(s, c);
-		if (!(tab = (char **)malloc(sizeof(char *) * nb_of_w + 1)))
-			return (NULL);
-		while (*s)
-		{
-			while (*s && *s == c)
-				s++;
-			if (*s && *s != c)
-				tab[++i] = ft_dup_word(s, c);
-			while (*s && *s != c)
-				s++;
-		}
-		tab[++i] = NULL;
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+			tab[++i] = ft_dup_word(s, c);
+		while (*s && *s != c)
+			s++;
 	}
+	tab[++i] = NULL;
 	return (tab);
 }

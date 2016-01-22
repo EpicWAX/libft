@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/20 18:00:20 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 15:22:37 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strtrim(char const *s)
 	int		start;
 	char	*new_s;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
 	while (s && ft_iswhsep(s[i]) == 1)
 		i++;
 	start = i;

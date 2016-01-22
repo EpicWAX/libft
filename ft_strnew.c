@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:54:44 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 00:52:45 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 15:27:06 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,9 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 	char	*new_s;
 
-	new_s = (char *)malloc(sizeof(char) * size + 1);
-	if (!new_s)
+	if (!(new_s = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
 	i = 0;
-	while (i < size)
-	{
-		new_s[i] = '\0';
-		i++;
-	}
-	new_s[i] = '\0';
+	ft_strclr(new_s);
 	return (new_s);
 }

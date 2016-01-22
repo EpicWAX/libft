@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 23:07:16 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 11:39:27 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 15:20:37 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (!s || !(new_s = ft_strnew(len)))
 		return (NULL);
-	else
-	{
-		while (start--)
-			s++;
-		ft_strncpy(new_s, s, len);
-		new_s[len] = '\0';
-	}
+	while (start--)
+		s++;
+	ft_strncpy(new_s, s, len);
+	new_s[len] = '\0';
 	return (new_s);
 }

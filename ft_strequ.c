@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 17:49:40 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/12 22:21:38 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 15:16:34 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,12 @@ int		ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 == NULL || s2 == NULL)
 		return (0);
-	else
+	while (*s1 != '\0' || *s2 != '\0')
 	{
-		while (*s1 != '\0' || *s2 != '\0')
-		{
-			if (*s1 != *s2)
-				return (0);
-			s1++;
-			s2++;
-		}
-		return (1);
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
+	return (1);
 }
