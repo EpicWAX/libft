@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 18:25:57 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/22 20:00:53 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 20:02:23 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char		*ft_itoa(int n)
 	if (!n || n == 0)
 		return (ft_strdup("0"));
 	if (n == -2147483648)
-		return (ft_stridup("-2147483648"));
+		return (ft_strdup("-2147483648"));
 	sign = n < 0 ? 1 : 0;
 	if (!(s = (char*)malloc(sizeof(char) * intlen(n) + sign + 1)))
 		return (NULL);
