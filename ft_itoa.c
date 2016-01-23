@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 18:25:57 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/22 20:02:23 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/22 21:12:35 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,16 @@ char		*ft_itoa(int n)
 {
 	char	*s;
 	int		sign;
+	int		nlen;
 
-	if (!n || n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	sign = n < 0 ? 1 : 0;
-	if (!(s = (char*)malloc(sizeof(char) * intlen(n) + sign + 1)))
+	nlen = intlen(n);
+	if (!(s = (char*)malloc(sizeof(char) * nlen + sign + 1)))
 		return (NULL);
+	s = s + nlen + sign;
 	*s = '\0';
+	if (!n)
+		*--s = '0';
 	while (n != 0)
 	{
 		*--s = ft_abs(n % 10) + '0';
