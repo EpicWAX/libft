@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 00:32:05 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/21 00:46:58 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/01/24 12:45:44 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,16 @@ char	*ft_xntor(char *s, int n)
 	int		i;
 	char	*tmp;
 
-	i = -1;
 	tmp = ft_strdup(s);
+	i = -1;
+	while (tmp && tmp[++i])
+	{
+		if (tmp[i] > 64 && tmp[i] < 91)
+			tmp[i] = 'A' - tmp[i] + 'Z';
+		if (tmp[i] > 96 && tmp[i] < 127)
+			tmp[i] = 'a' - tmp[i] + 'z';
+	}
+	i = -1;
 	while (tmp && tmp[++i])
 	{
 		if (tmp[i] > 64 && tmp[i] < 91)
