@@ -19,19 +19,9 @@ static int	intlen(int n)
 	i = 0;
 	if (n == 0)
 		return (1);
-	while (n != 0)
-	{
-		n /= 10;
+	while ((n /= 10) != 0)
 		i++;
-	}
 	return (i);
-}
-
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
 }
 
 char		*ft_itoa(int n)
@@ -44,13 +34,13 @@ char		*ft_itoa(int n)
 	nlen = intlen(n);
 	if (!(s = (char*)malloc(sizeof(char) * nlen + sign + 1)))
 		return (NULL);
-	s = s + nlen + sign;
+	s += (nlen + sign);
 	*s = '\0';
 	if (!n)
 		*--s = '0';
 	while (n != 0)
 	{
-		*--s = ft_abs(n % 10) + '0';
+		*--s = (n > 0) ? (n % 10) + '0' : ((-n) % 10) + '0';
 		n /= 10;
 	}
 	if (sign == 1)
