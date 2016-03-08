@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:21:57 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/13 06:57:14 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/08 16:50:26 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ char	*ft_strcpy(char *dest, const char *src)
 	int i;
 
 	i = -1;
-	if (*src)
+	if (src)
 	{
-		while (src && src[++i])
+		while (src[++i])
 			dest[i] = src[i];
 		dest[i] = '\0';
 	}
