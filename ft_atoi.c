@@ -6,33 +6,33 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:18:45 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 08:18:46 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/21 01:13:01 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+int		ft_atoi(const char *s)
 {
 	int ret;
 	int i;
-	int s;
+	int sign;
 
 	ret = 0;
 	i = 0;
-	s = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\t' || str[i] == '\r' || str[i] == '\f')
+	sign = 1;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\v'
+			|| s[i] == '\t' || s[i] == '\r' || s[i] == '\f')
 		i++;
-	if (str[i] == '-')
+	if (s[i] == '-')
 	{
-		s = -1;
+		sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
+	else if (s[i] == '+')
 		i++;
-	while (str && str[i] >= '0' && str[i] <= '9')
+	while (s && s[i] >= '0' && s[i] <= '9')
 	{
-		ret = ret * 10 + (str[i] - '0');
+		ret = ret * 10 + (s[i] - '0');
 		i++;
 	}
-	return (s * ret);
+	return (sign * ret);
 }

@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/22 23:21:20 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/21 01:07:10 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *s);
 int					ft_recursive_power(int n, int power);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

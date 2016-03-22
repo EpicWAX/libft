@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:09:27 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/14 14:20:19 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/21 02:51:28 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char *c;
 
 	c = (unsigned char *)s;
-	while (n)
-	{
-		*c = 0;
-		c++;
-		n--;
-	}
+	while (n--)
+		*c++ = 0;
 }
