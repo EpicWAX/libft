@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 10:30:05 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/20 22:19:36 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/23 08:05:59 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ char	*ft_strchr(const char *s, int c)
 	int i;
 
 	i = 0;
-	while ((s && s[i]) && c != s[i])
-		i++;
-	if (c == s[i])
-		return ((char *)s + i);
-	s++;
+	if (s)
+	{
+		while (s[i] && c != s[i])
+			i++;
+		if (c == s[i])
+			return ((char*)s + i);
+	}
 	return (NULL);
 }

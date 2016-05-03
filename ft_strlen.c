@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:22:26 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 01:31:03 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/23 07:27:58 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
-	if (*s)
-		while (s && s[i])
-			i++;
+	while (s[i])
+		i++;
 	return (i);
 }

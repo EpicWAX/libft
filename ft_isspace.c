@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: qhusler <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/15 07:52:54 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 01:00:21 by qhusler          ###   ########.fr       */
+/*   Created: 2016/03/24 19:34:02 by qhusler           #+#    #+#             */
+/*   Updated: 2016/03/25 17:09:33 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_power(int n, int power)
-{
-	int result;
+#include "libft.h"
 
-	if (power < 0)
-		return (0);
-	else if (power == 0)
+int		ft_isspace(int c)
+{
+	if (c == '\t' || c == '\n' || c == '\v' ||
+		c == '\f' || c == '\r' || c == ' ')
 		return (1);
-	else
-	{
-		result = n * ft_recursive_power(n, power - 1);
-		return (result);
-	}
+	return (0);
 }

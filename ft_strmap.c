@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 14:36:15 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/22 15:13:40 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/23 10:42:55 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!s || !f || !(new_s = ft_strdup(s)))
 		return (NULL);
 	i = -1;
-	while (new_s && new_s[++i])
+	while (new_s[++i])
 		new_s[i] = f(new_s[i]);
 	new_s[i] = '\0';
 	return (new_s);

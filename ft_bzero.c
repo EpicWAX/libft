@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:09:27 by qhusler           #+#    #+#             */
-/*   Updated: 2016/03/21 02:51:28 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/23 05:38:01 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *c;
-
-	c = (unsigned char *)s;
-	while (n--)
-		*c++ = 0;
+	ft_memset(s, 0, n);
 }

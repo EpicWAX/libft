@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:22:55 by qhusler           #+#    #+#             */
-/*   Updated: 2015/12/11 08:24:49 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/23 00:48:49 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 
 	i = 0;
 	len = ft_strlen(dest);
-	while (src[i] && i < n)
+	while (i < n)
 	{
 		dest[len + i] = src[i];
 		i++;

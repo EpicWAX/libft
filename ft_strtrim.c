@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 07:34:46 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/22 15:22:37 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/25 17:30:51 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	i = 0;
-	while (s && ft_iswhsep(s[i]) == 1)
+	while (ft_isspace(s[i]) == 1)
 		i++;
 	start = i;
 	if (s[start] == '\0')
 		return (ft_strdup(""));
 	i = ft_strlen(s);
-	while (s && ft_iswhsep(s[--i]) != 0)
+	while (ft_isspace(s[--i]) != 0)
 		;
 	if (!(new_s = ft_strnew((i - start) + 1)))
 		return (NULL);

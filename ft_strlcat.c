@@ -6,21 +6,11 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:15:21 by qhusler           #+#    #+#             */
-/*   Updated: 2016/01/18 01:31:11 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/27 07:15:11 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strnlen(char *str, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < size && str && str[i])
-		i++;
-	return (i);
-}
 
 size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {

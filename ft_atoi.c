@@ -6,33 +6,32 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:18:45 by qhusler           #+#    #+#             */
-/*   Updated: 2016/03/21 01:13:01 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/03/26 18:27:17 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_atoi(const char *s)
 {
 	int ret;
-	int i;
 	int sign;
 
 	ret = 0;
-	i = 0;
 	sign = 1;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\v'
-			|| s[i] == '\t' || s[i] == '\r' || s[i] == '\f')
-		i++;
-	if (s[i] == '-')
+	while (ft_isspace(*s) == 1)
+		s++;
+	if (*s == '-')
 	{
 		sign = -1;
-		i++;
+		s++;
 	}
-	else if (s[i] == '+')
-		i++;
-	while (s && s[i] >= '0' && s[i] <= '9')
+	else if (*s == '+')
+		s++;
+	while (*s >= '0' && *s <= '9')
 	{
-		ret = ret * 10 + (s[i] - '0');
-		i++;
+		ret = ret * 10 + (*s - '0');
+		s++;
 	}
 	return (sign * ret);
 }

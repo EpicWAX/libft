@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2016/02/18 18:31:53 by qhusler          ###   ########.fr        #
+#    Updated: 2016/03/27 07:12:01 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,14 +34,11 @@ SRC_NAME = ft_memset.c \
 		   ft_strcmp.c \
 		   ft_strncmp.c \
 	 	   ft_atoi.c \
-		   ft_recursive_power.c \
 	 	   ft_isalpha.c \
 	 	   ft_isdigit.c \
 	 	   ft_isalnum.c \
 	 	   ft_isascii.c \
 	 	   ft_isprint.c \
-		   ft_iswhsep.c \
-		   ft_isprime.c \
 		   ft_toupper.c \
 	 	   ft_tolower.c \
 	 	   ft_memalloc.c \
@@ -60,15 +57,10 @@ SRC_NAME = ft_memset.c \
 		   ft_strtrim.c	\
 		   ft_strsplit.c \
 	 	   ft_itoa.c \
-		   ft_xrotn.c \
-		   ft_xntor.c \
-		   ft_swap.c \
 		   ft_putchar.c \
 	 	   ft_putstr.c \
 		   ft_putendl.c \
 	 	   ft_putnbr.c \
-		   ft_putnbrendl.c \
-		   ft_epur_str.c \
 	 	   ft_putchar_fd.c \
 		   ft_putstr_fd.c \
 	 	   ft_putendl_fd.c \
@@ -78,7 +70,16 @@ SRC_NAME = ft_memset.c \
 		   ft_lstdel.c \
 		   ft_lstadd.c \
 		   ft_lstiter.c \
-		   ft_lstmap.c
+		   ft_lstmap.c \
+		   ft_pgcd.c \
+		   ft_isblank.c \
+		   ft_isspace.c \
+		   ft_isprime.c \
+		   ft_strnlen.c \
+		   ft_epur_str.c \
+		   ft_putnbrendl.c \
+		   ft_xrotn.c \
+		   ft_xntor.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 AR = ar rc
 RLIB = ranlib
