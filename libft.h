@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/03/27 14:57:46 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/05/20 12:49:43 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+# define CEND		"\x1b[0m"
+# define CCYAN		"\x1b[38;5;39m"
+# define CRED		"\x1b[38;5;160m"
+# define CYELL		"\x1b[38;5;11m"
+# define CGREEN		"\x1b[38;5;82m"
+# define CBLUE		"\x1b[38;5;19m"
+# define CORANGE	"\x1b[38;5;202m"
+# define CPURPLE	"\x1b[38;5;62m"
 
 typedef struct		s_list
 {
@@ -73,6 +82,7 @@ int					ft_tolower(int c);
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
+void				ft_putstr_color(char *s_color, char *s_printable, char *s_end);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);

@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2016/03/27 07:12:01 by qhusler          ###   ########.fr        #
+#    Updated: 2016/05/20 11:53:54 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC_NAME = ft_memset.c \
 	 	   ft_itoa.c \
 		   ft_putchar.c \
 	 	   ft_putstr.c \
+		   ft_putstr_color.c \
 		   ft_putendl.c \
 	 	   ft_putnbr.c \
 	 	   ft_putchar_fd.c \
