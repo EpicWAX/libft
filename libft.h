@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/05/20 12:49:43 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/06/02 05:16:27 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int					ft_isblank(int c);
 int					ft_isspace(int c);
 int					ft_isprime(int n);
 size_t				ft_strnlen(const char *s, size_t maxlen);
+void				ft_string_swap(char **s1, char **s2);
 void				ft_epur_str(char *s);
 void				ft_putnbrendl(int n);
 char				*ft_xrotn(char *s, int n);

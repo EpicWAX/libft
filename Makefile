@@ -6,7 +6,7 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2016/05/20 11:53:54 by qhusler          ###   ########.fr        #
+#    Updated: 2016/06/02 05:16:56 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC_NAME = ft_memset.c \
 		   ft_isspace.c \
 		   ft_isprime.c \
 		   ft_strnlen.c \
+		   ft_string_swap.c \
 		   ft_epur_str.c \
 		   ft_putnbrendl.c \
 		   ft_xrotn.c \
