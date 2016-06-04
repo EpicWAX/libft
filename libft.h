@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/02 05:16:27 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/06/04 03:26:39 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int					ft_tolower(int c);
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
-void				ft_putstr_color(char *s_color, char *s_printable, char *s_end);
+void				ft_putstr_color(char *color, char *printable, char *end);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
