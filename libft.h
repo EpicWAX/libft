@@ -6,16 +6,18 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/04 03:26:39 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/06/17 19:27:23 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 # define CEND		"\x1b[0m"
 # define CCYAN		"\x1b[38;5;39m"
@@ -25,6 +27,18 @@
 # define CBLUE		"\x1b[38;5;19m"
 # define CORANGE	"\x1b[38;5;202m"
 # define CPURPLE	"\x1b[38;5;62m"
+
+# define BUFF_SIZE	42
+
+typedef	struct		s_mfd
+{
+	int				fd;
+	char			*s;
+	void			*next;
+	void			*bgn_lst;
+}					t_mfd;
+
+int					get_next_line(const int fd, char **line);
 
 typedef struct		s_list
 {
@@ -98,11 +112,17 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_pgcd(int a, int b);
+
 int					ft_isblank(int c);
 int					ft_isspace(int c);
 int					ft_isprime(int n);
+
 size_t				ft_strnlen(const char *s, size_t maxlen);
-void				ft_string_swap(char **s1, char **s2);
+
+void				ft_swap_char(char *a, char *b);
+void				ft_swap_str(char **s1, char **s2);
+char				*ft_strrev(char *str);
+
 void				ft_epur_str(char *s);
 void				ft_putnbrendl(int n);
 char				*ft_xrotn(char *s, int n);

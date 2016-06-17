@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_swap_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 08:21:57 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/14 10:25:47 by qhusler          ###   ########.fr       */
+/*   Created: 2015/12/11 08:18:45 by qhusler           #+#    #+#             */
+/*   Updated: 2016/06/17 19:27:37 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_swap_str(char **s1, char **s2)
 {
-	int	i;
+	char *s;
 
-	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	s = *s1;
+	*s1 = *s2;
+	*s2 = s;
 }
