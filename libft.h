@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/08/08 19:35:49 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/08/08 19:50:25 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 # define WESH			PUTSCB("\nWESH\n");
 
 /*
-** Get_next_line parts
+** Get_next_line related parts
 */
 
 # define BUFF_SIZE	42
@@ -66,7 +66,7 @@ typedef	struct		s_mfd
 int					get_next_line(const int fd, char **line);
 
 /*
-** Lft parts
+** Lft prototype and typedef
 */
 
 typedef struct		s_list
