@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/17 19:27:23 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/08/08 19:35:49 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+/*
+** Define of color for ft_putstr_color
+*/
+
 # define CEND		"\x1b[0m"
 # define CCYAN		"\x1b[38;5;39m"
 # define CRED		"\x1b[38;5;160m"
@@ -27,6 +31,27 @@
 # define CBLUE		"\x1b[38;5;19m"
 # define CORANGE	"\x1b[38;5;202m"
 # define CPURPLE	"\x1b[38;5;62m"
+
+/*
+** The White Rabbit (define for debug more simply)
+**
+**		PUTSCx is a define to call the function ft_putstr_color more simply.
+**		TROIS is a simple color terner for TRUE and FALSE but for mystic reason
+**			the return value is the same.
+**		WESH is a simple segfault tracker but in blue! "Wesh" is the slang in
+**			french for "Hello my friends how are you? Me i'm realy fine today!".
+*/
+
+# define PUTSCG(X)		ft_putstr_color(CGREEN, X, CEND)
+# define PUTSCR(X)		ft_putstr_color(CRED, X, CEND)
+# define PUTSCB(X)		ft_putstr_color(CBLUE, X, CEND)
+
+# define TROIS			? PUTSCG("1\n") : PUTSCR("1\n");
+# define WESH			PUTSCB("\nWESH\n");
+
+/*
+** Get_next_line parts
+*/
 
 # define BUFF_SIZE	42
 
@@ -39,6 +64,10 @@ typedef	struct		s_mfd
 }					t_mfd;
 
 int					get_next_line(const int fd, char **line);
+
+/*
+** Lft parts
+*/
 
 typedef struct		s_list
 {
