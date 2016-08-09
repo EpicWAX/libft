@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 22:31:50 by qhusler           #+#    #+#             */
-/*   Updated: 2016/08/08 19:50:25 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/08/09 15:39:00 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 **		TROIS is a simple color terner for TRUE and FALSE but for mystic reason
 **			the return value is the same.
 **		WESH is a simple segfault tracker but in blue! "Wesh" is the slang in
-**			french for "Hello my friends how are you? Me i'm realy fine today!".
+**			french for "Hello my friends how are you? Me i'm really fine today!".
 */
 
 # define PUTSCG(X)		ft_putstr_color(CGREEN, X, CEND)
