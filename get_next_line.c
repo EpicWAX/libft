@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 02:56:39 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/04 05:53:26 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/06/27 13:52:55 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		final_cut(char **s, char **line)
 	char	*tmp;
 	int		nl;
 
-	ft_string_swap(&*s, &tmp);
+	ft_swap_str(&*s, &tmp);
 	nl = (find_nl(tmp, 0) == -1) ? (int)ft_strlen(tmp) : find_nl(tmp, 0);
 	*line = ft_strsub(tmp, 0, nl);
 	*s = ft_strsub(tmp, nl + 1, ft_strlen(tmp));
@@ -46,7 +46,7 @@ static int		read_fn(int const fd, char **s)
 			return (0);
 		free(*s);
 		*s = NULL;
-		ft_string_swap(&*s, &tmp);
+		ft_swap_str(&*s, &tmp);
 	}
 	return (ret);
 }

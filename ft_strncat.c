@@ -6,7 +6,7 @@
 /*   By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 08:22:55 by qhusler           #+#    #+#             */
-/*   Updated: 2016/06/04 15:59:00 by qhusler          ###   ########.fr       */
+/*   Updated: 2016/09/06 16:14:55 by qhusler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-		size_t i;
+	size_t i;
 	size_t len;
 
 	i = 0;

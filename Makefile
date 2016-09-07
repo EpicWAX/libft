@@ -6,14 +6,15 @@
 #    By: qhusler <qhusler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/06 02:00:45 by qhusler           #+#    #+#              #
-#    Updated: 2016/06/17 19:27:10 by qhusler          ###   ########.fr        #
+#    Updated: 2016/09/06 21:18:06 by qhusler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAG = -c -Wall -Werror -Wextra
-SRC_NAME = ft_memset.c \
+SRC_NAME = get_next_line.c \
+		   ft_memset.c \
 		   ft_bzero.c \
 		   ft_memcpy.c \
 		   ft_memccpy.c \
